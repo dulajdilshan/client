@@ -353,7 +353,7 @@ void PropagateDownloadFile::start()
         qCDebug(lcPropagateDownload) << "creating placeholder file" << fn;
         QFile file(fn);
         file.open(QFile::ReadWrite);
-        file.write("stub");
+        file.write("\0");
         file.close();
         updateMetadata(false);
         return;
